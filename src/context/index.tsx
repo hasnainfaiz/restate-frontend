@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState, ReactNode } from "react";
+import React, { createContext, useState } from "react";
 import { apis, USER_OBJECT } from "../services";
 
 interface InitialState {
@@ -11,12 +11,9 @@ const initialState: InitialState = {
   setUser: () => { }
 }
 
-type props = {
-  children: ReactNode
-}
 export const AppContext = createContext(initialState);
 
-const AppContextProvider = ({ children }: props) => {
+const AppContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem(USER_OBJECT) || "{}"));
 
   return (

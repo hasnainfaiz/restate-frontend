@@ -1,13 +1,9 @@
-import React, { ReactNode, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Route, Navigate, useNavigate } from "react-router-dom";
 import { AUTH_TOKEN, routes } from "../../services";
 import axios from "axios";
 
-type params = {
-    children: ReactNode
-}
-
-const ProtectedRoute = ({ children }: params) => {
+const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
     const token = localStorage.getItem(AUTH_TOKEN);
     const navigate = useNavigate();
 
