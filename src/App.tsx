@@ -1,7 +1,7 @@
 import { auth } from "./services/utils/firebase";
 import { GoogleAuthProvider } from 'firebase/auth';
 import { socialLoginWithPopUp } from './services/utils/firebase-login';
-import { images } from './assets';
+// import { images } from './assets';
 import './App.scss';
 
 function App() {
@@ -20,12 +20,12 @@ function App() {
       <div>
         <p className='test'>Testing</p>
       </div>
-      <div>
+      {/* <div>
         <button onClick={googleLogin}>Test Login</button>
       </div>
       <div>
         <img src={images.cclogo} height={90} width={90} alt='testing' />
-      </div>
+      </div> */}
     </div>
   );
 }
